@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Bienvenido !!</h2><br>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input style=" font-weight: 500" type="file" name="document"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button  style=" font-weight: 500" type="submit">Generar</button>
+  </form>
+  {% if url %}
+    <p style=" font-weight: 600">Archivo procesado: <a href="{{ url }}">{{ url }}</a></p>
+  {% endif %}
+{% endblock %}
