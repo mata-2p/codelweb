@@ -7,6 +7,7 @@ Este es un archivo temporal.
 ########## LIBRERÍAS A UTILIZAR ##########
 
 #Se importan la librerias a utilizar
+import request
 import numpy as np
 import pandas as pd
 from datetime import date
@@ -21,12 +22,6 @@ from tkinter import filedialog
 
 #Se importa los datos a utilizar
 
-root = tk.Tk()
-
-root.withdraw()
-file_path = filedialog.askopenfilename()
-
-print(file_path)
 
 
 url_rsso = r'file:///C:/Users/Mata/Desktop/RSSO.xlsx'
@@ -224,7 +219,7 @@ df_rsso = df_rsso.drop(df_rsso[df_rsso['Riesgo Critico']=='EC16-Estallido de roc
 
 #Cambio de nombres de columnas a texto para uso en formulas
 df_rsso.columns = ['Codigo_RSSO',
- 'Tipo_RSSO', 
+ 'Tipo_RSSO',
  'Estado',
  'Causal',
  'Nivel_RSSO',
@@ -337,15 +332,3 @@ df_rsso['Cumple los 2 dias de solucion ?'].replace([0,1],['No','Si'],inplace=Tru
 dir_rsso = r'C:\Users\Mata\Downloads\RSSO.xlsx'
 #exportar a tipo excel
 df_rsso.to_excel(dir_rsso)
-
-
-
-
-
-
-
-
-
-
-
-
